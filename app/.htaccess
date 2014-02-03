@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$    /defistop/app/webroot/    [L]
+    RewriteRule    (.*) /defistop/app/webroot/$1    [L]
+</IfModule>

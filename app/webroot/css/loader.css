@@ -1,0 +1,143 @@
+/* Loader */
+.loader{
+	text-align:center;
+}
+
+.loader span {
+	background: #640404;
+	width: 20px;
+	height: 70px;
+	vertical-align: middle;
+	display: inline-block;
+	margin: 80px auto;
+
+	-webkit-animation: loader 1s infinite;
+	-moz-animation: loader 1s infinite;
+	-ms-animation: loader 1s infinite;
+	animation: loader 1s infinite;
+}
+
+.loader span:nth-of-type(2) {
+	-webkit-animation-delay: 0.4s;
+	-moz-animation-delay: 0.4s;
+	-ms-animation-delay: 0.4s;
+	animation-delay: 0.4s;
+}
+
+.loader span:nth-of-type(3) {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	-ms-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+
+@keyframes "loader" {
+ 0% {
+    width: 20px;
+   	height: 70px;
+   	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+   	filter: alpha(opacity=90);
+   	opacity: 0.9;
+ }
+ 50% {
+    width: 20px;
+   	height: 70px;
+   	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+   	filter: alpha(opacity=50);
+   	opacity: 0.5;
+ }
+ 100% {
+    width: 20px;
+   	height: 70px;
+   	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+   	filter: alpha(opacity=50);
+   	opacity: 0.5;
+ }
+
+}
+
+@-moz-keyframes loader {
+ 0% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=90);
+   opacity: 0.9;
+ }
+ 50% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+ 100% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+
+}
+
+@-webkit-keyframes "loader" {
+ 0% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=90);
+   opacity: 0.9;
+ }
+ 50% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+ 100% {
+   width: 20px;
+   height: 70px;
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+
+}
+
+@-ms-keyframes "loader" {
+ 0% {
+   width: 20px;
+   height: 70px;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+   filter: alpha(opacity=90);
+   opacity: 0.9;
+ }
+ 50% {
+   width: 20px;
+   height: 70px;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+ 100% {
+   width: 20px;
+   height: 70px;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+   filter: alpha(opacity=50);
+   opacity: 0.5;
+ }
+
+}
+
+.loader{
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	top: inherit;
+}
+
+@media only screen and (max-width: 769px) {
+	.loader{
+		position: absolute;
+		left: 50%;
+		margin-left: -32px;
+		top: 100px;
+	}
+}

@@ -1,0 +1,276 @@
+html { height: 100% }
+  body {
+    width: 100%;
+    height: 100%; 
+    background-color: #dadada;
+    padding: 0;
+    margin: 0;
+  }
+    #map { height: 100% }
+  
+  .gallery {
+	  background-color: white;
+   min-height: 700px; 
+  }
+  
+  ul {
+	  padding: :0;
+	  margin: 0;
+  }
+  form {
+	  margin: 0;
+	  max-width: 500px;
+  }
+  /* Custom container */
+  .container-narrow {
+    margin: 0 auto;
+    background-color: #640404;
+  }
+  .container-narrow > hr {
+    margin: 0px 0;
+  }
+
+  /* Main marketing message and sign up button */
+  .jumbotron {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+  }
+  .jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+
+  .infoWindowContent p{
+	  margin-bottom: 0px;
+	  text-align: center;
+  }
+  
+  #menubar {
+      width:100%;
+      background-color:#444;
+      color: #fff;
+  }
+  #menu, #right {
+      display:inline;
+  }
+  #right {
+      width:500px;
+      background-color: #fff;
+      z-index: 5;
+      position: fixed;
+      left: 0px;
+      height: 100%;
+  }
+  #menu {
+      float:left;
+      width: 100px;
+      height: 100%;
+  }
+  #menu li {
+      background-color:#fff;
+      border-bottom: 1px solid #000;
+  }
+.pg-open {
+    display: none;
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 20px;
+    margin-left: 10px;
+    top:-37px;
+    background: url('../img/menu.png') no-repeat ;
+    text-indent: -999999px;
+    border: 0;
+}
+.pg-openusr {
+	float:right;
+    display: none;
+    position: relative;
+    left:-10px;
+    top:-40px;
+	background: url('../img/sprite_icon.png') no-repeat -50px -46px;
+	width: 35px;
+	height: 25px;
+    text-indent: -999999px;
+    border: 0;
+}
+  #nav { margin: 0; text-align: center;}
+  #nav li {display: inline-block; margin: 0px 10px;}
+  #nav li a {color:white; font-variant: small-caps; font-size: 16px; letter-spacing: 3px; font-weight: 400}
+  #nav li a:hover {text-decoration: underline; color:white; background-color: transparent;}
+   #school_selector{
+   }
+   #year_selector{
+      min-width: 79px;
+   }
+   #map1 {
+      font-size: 18px;
+   }
+   #action_buttons .btn-group{
+		margin-left: 0px;
+   }
+   #action_buttons{
+		position: absolute;
+		top: 170px;
+		z-index: 5;
+		right: 330px;
+		float: right;
+   }
+   
+   .dropdown-menu {
+   		min-width: 0px;
+   }
+	#map li {
+		
+	}
+	.masthead{
+		line-height: 30px;
+	}
+	#userlist {
+	    /* These styles MUST be included. Do not change. */
+	    display: inline-block;
+	    float: right;
+	    z-index: 999999;
+	    overflow: scroll;
+	    
+	    /* Specify the width of your pageslide here */
+	    width: 300px;
+	    /* These styles are optional, and describe how the pageslide will look */
+	    color: #FFF;
+	    background-image: url('../img/bg.png')
+	}
+	#topbar1 img {display: none}
+	.clear {
+		clear: right;
+		line-height: 0;
+		height: 0px;
+	}
+	.accueil {
+		
+		background-position: left center;
+	}
+	.input-large{
+		height: 30px;
+	}
+	
+	#ptr_div{
+		display: inline-block;
+		float: left;
+		margin: 5px;
+	}
+	
+	#classement{
+		padding-left: 15px;
+		color: white;
+	}
+	
+	#info_div{
+		display: inline-block;
+		float: none;
+	}
+	
+	.team{
+	
+	}
+	.times {
+		color: #777777;
+		font-style: italic;
+	}
+	
+	.ptr {
+		width: 40px;
+		margin-left: -50px;
+		padding: 5px;
+	}
+	          #userlist li {display: block; float: none; padding: 0px 0px 0px 0px; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 60px;}
+	          #userlist #self_ranking li {height: inherit; padding: 5px;}
+          #userlist li a {padding-top:2px; display:block; color: #fff; border: none; font-variant: normal; letter-spacing: normal ;font-weight:normal;text-shadow: -0px -1px 0px black; font-weight: 400;height: 44px;letter-spacing: 1px; font-size: 18px;margin-left: 10px;}
+          #userlist li a {color: #fff; letter-spacing: 2px; font-size: 14px; font-family: 'Open Sans', Arial, sans-serif;}
+          #userlist li a:hover { text-decoration: none; background-color: transparent;}
+			.alert-box {
+				font-size: inherit;
+			}
+			.alert-box.warning {
+				background-color: #FFDACC;
+				border-color: #E0C0B4;
+				color: #791313;
+			}
+			.alert-box.alert-success {
+				background-color: #dff0d8;
+				border-color: #d6e9c6;
+				color: #3c763d;
+			}
+	.clearing-thumbs li a img{
+	        margin-bottom: 10px;
+        }
+        /*pour le modal de mise a jour de position*/
+        #submit button{
+	        margin-right: 5px;
+        }
+  
+  /* Mobile Landscape and Portrait */
+  @media only screen and (max-width: 769px) {
+  	body {margin: 0px; padding: 0px;}
+  	  form {margin: 0;}
+  	  #action_buttons{
+  	  	top:60px;
+  	  	right: 10px;
+  	  }
+  	  #userlist{background-color: transparent;}
+  	  #topbar1 {background-image: url('../img/bar.png');height: 50px; }
+  	  #topbar1 {text-align: center;}
+  	  #topbar1 img {display:inline; margin-top: 10px;}
+  	  .jumbotron {display: none;}
+  	  #logo1 {width: 140px; height: auto;}
+      #masthead { width: 400px; }
+      #masthead h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
+      #nav { display: none; }
+      #userlist { display: none; float:none;}
+      
+      .pg-open { display: block; }
+      .back { display: block; }
+      .pg-openusr { display: block; }
+      #pageslide { 
+      background-image: url('../img/bg.png'); width: 275px; background-color: #3e3b35; box-shadow: inset -10px -0px 12px -10px black,inset 10px -0px 12px -10px black ; padding: 0px;}
+          #pageslide #nav li {display: block; float: none; padding: 0px 0px 0px 0px; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 44px;}
+          #pageslide #nav li a { padding: 11px 0px 0px 30px;color: #fff; border: none; font-variant: normal; letter-spacing: normal ;font-weight:normal;text-shadow: -0px -1px 0px black; font-weight: 400;height: 34px;letter-spacing: 1px; font-size: 18px;}
+          #pageslide #nav li a {color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; font-family: 'Open Sans', Arial, sans-serif;}
+          #pageslide #nav li a:hover { text-decoration: none; background-color: transparent;}
+          
+          #userlist {padding: 0; width:auto; background-image: none;}
+          #userlist li {display: block; float: none; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 64px;}
+          #userlist li a {padding-top:2px; display:block; color: #fff; border: none; font-variant: normal; letter-spacing: normal ;font-weight:normal;text-shadow: -0px -1px 0px black; font-weight: 400;height: 44px;letter-spacing: 1px; font-size: 18px;margin-left: 10px;}
+          #userlist li a {color: #fff; letter-spacing: 2px; font-size: 12px; font-family: 'Open Sans', Arial, sans-serif;}
+          #userlist li a:hover { text-decoration: none; background-color: transparent;}
+        .clearing-thumbs li a img{
+	        width: 100px;
+	        height: 100px;
+        }
+  }
+  
+  /* Mobile Portrait */
+    @media only screen and (max-width: 479px) {
+        #masthead { width: 280px; }
+        #masthead h1 { font-size: 14px; }
+    }
+        
+        .ch-info h3 {
+color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; font-family: 'Open Sans', Arial, sans-serif; text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.row_link, .row_link:hover {
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: black;
+	font-weight: normal;
+}
+
+select{
+	width: inherit;
+}
