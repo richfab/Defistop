@@ -18,6 +18,7 @@ class PositionsController extends AppController {
 	
 	//get positions json
 	public function get_positions() {
+		
 	
 		if($this->RequestHandler->isAjax()){
 			
@@ -56,8 +57,8 @@ class PositionsController extends AppController {
     }
     
     public function index() {
-		//on inclut le script mapquest, celui responsable du chargement de la carte et celui pour la maj position
-    	$this->set('jsIncludes',array('https://maps.googleapis.com/maps/api/js?key=AIzaSyA7d3ppUSRkOeGZ-ZAmU0R8f_PxyheJch0&sensor=true&libraries=geometry','map','overlays','upload_position','tools','loader','bootstrap.min','hook/mousewheel','hook/hook.modif'));
+    			//on inclut le script mapquest, celui responsable du chargement de la carte et celui pour la maj position
+    	$this->set('jsIncludes',array('http://maps.googleapis.com/maps/api/js?key=AIzaSyA7d3ppUSRkOeGZ-ZAmU0R8f_PxyheJch0&sensor=true&libraries=geometry','map','overlays','upload_position','tools','loader','bootstrap.min','hook/mousewheel','hook/hook.modif'));
     	
     	$this->set('cssIncludes',array('hook/hook.css?v=1','instant-sprite'));
     	
@@ -148,6 +149,8 @@ class PositionsController extends AppController {
 		    	}
 	    	}
     	}
+    	
+	
     }
     
     public function photos() {
@@ -169,6 +172,12 @@ class PositionsController extends AppController {
     	if(!$UsersController->userHasPayed($user_id)){
     		return new CakeResponse(array('body'=> json_encode(array('errorMessage'=>'Votre inscription doit avoir été validée pour pouvoir mettre à jour votre position.')),'status'=>500));
     	}
+    	
+    	//on verifie que l'utilisateur fait bien partie de l'année en cours
+    	
+   		if(!$UsersController->userBelongsToCurrentYear($user_id)){
+			return new CakeResponse(array('body'=> json_encode(array('errorMessage'=>"Vous n'êtes pas inscrit pour l'année en cours.")),'status'=>500));
+		}
     
 	    if($this->RequestHandler->isAjax()){
 	    	
@@ -228,7 +237,7 @@ class PositionsController extends AppController {
     public function admin_add($year = null, $user_id = null) {
     
     	//on inclut le script google maps pour l'autocomplete des lieux et celui de la distance
-    	$this->set('jsIncludes',array('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places,geometry','places_autocomplete','tools'));
+    	$this->set('jsIncludes',array('http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places,geometry','places_autocomplete','tools'));
     	
     	//on recupere l'equipage pour le breadcrumbs
 	    $this->Position->User->recursive = 0;
@@ -256,7 +265,7 @@ class PositionsController extends AppController {
     public function admin_edit($year = null, $user_id = null, $id = null) {
     
     	//on inclut le script google maps pour l'autocomplete des lieux
-    	$this->set('jsIncludes',array('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places,geometry','places_autocomplete','tools'));
+    	$this->set('jsIncludes',array('http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places,geometry','places_autocomplete','tools'));
     	
     	//on recupere l'equipage pour le breadcrumbs
 	    $this->Position->User->recursive = 0;

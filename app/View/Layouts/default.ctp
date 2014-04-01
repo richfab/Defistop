@@ -28,10 +28,11 @@ $websiteName = 'Défistop';
 		<?php echo $title_for_layout; ?>
 	</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Annie+Use+Your+Telescope" rel="stylesheet" type="text/css">
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('cake.generic.modif','bootstrap.min','bootstrap-glyphicons','foundation','style','loader','mapquest_firefox_fix','jquery.pageslide'));
+		echo $this->Html->css(array('foundation','cake.generic.modif','bootstrap-glyphicons','loader','mapquest_firefox_fix','jquery.pageslide','bootstrap.min','style','default'));
 		
 		echo $this->Html->script(array('jquery-1.10.2'));
 		
@@ -59,10 +60,7 @@ $websiteName = 'Défistop';
 					<?php echo $this->Html->image('bar-title-i.png', array('alt' => 'Logo','class'=>'center')); ?>
 				</div>
 	
-				<!--Logo-->
-				<div class="jumbotron">
-					<?php echo $this->Html->image('logo-petit-i.png', array('alt' => 'Logo')); ?>
-				</div>
+				
 				
 				<div class="masthead">
 					<!--Bouton responsive mobile-->
@@ -73,20 +71,79 @@ $websiteName = 'Défistop';
 					<?php endif; ?>
 					
 					<!--Menu-->
-					<ul id="nav" class="nav">
-						
-						<li><?php echo $this->Html->link('Accueil','/'); ?></li>
-						<li><?php echo $this->Html->link('Carte',array('controller'=>'positions','action'=>'index')); ?></li>
-						<li><?php echo $this->Html->link('Photos',array('controller'=>'positions','action'=>'photos')); ?></li>
+					<ul id="nav" class="nav cl-effect-5">
+					
+						<li>
+							<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Accueil', array('data-hover' => 'Accueil')),
+								'/', 
+								array('class' => 'cl-effect-5','escape' => false)
+							); ?>
+						</li>
+						<li>
+							<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Carte', array('data-hover' => 'Carte')),
+								array('controller'=>'positions','action'=>'index'), 
+								array('class' => 'cl-effect-5', 'escape' => false)
+							); ?>
+						</li>
+						<li>
+							<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Équipages', array('data-hover' => 'Équipages')),
+								array('controller'=>'users','action'=>'index'),
+								array('class' => 'cl-effect-5', 'escape' => false)
+							); ?>
+						</li>
+						<li>
+							<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Photos', array('data-hover' => 'Photos')),
+								array('controller'=>'positions','action'=>'photos'),
+								array('class' => 'cl-effect-5', 'escape' => false)
+							); ?>
+						</li>
 						<?php if(AuthComponent::user('id')): ?>
-                        <li><?php echo $this->Html->link("Mon compte",array('controller'=>'users','action'=>'profile')); ?></li>
-                        <li><?php echo $this->Html->link("Se déconnecter",array('controller'=>'users','action'=>'logout')); ?></li>
+                        <li>
+	                        <?php echo $this->Html->link(
+		                        $this->Html->tag('span', 'Mon compte', array('data-hover' => 'Mon compte')),
+		                        array('controller'=>'users','action'=>'profile'), 
+		                        array('class' => 'cl-effect-5', 'escape' => false)
+	                        ); ?>
+                        </li>
+                        <li>
+                        	<?php echo $this->Html->link(
+	                        	$this->Html->tag('span', 'Déconnexion', array('data-hover' => 'Déconnexion')),
+	                        	array('controller'=>'users','action'=>'logout'), 
+	                        	array('class' => 'cl-effect-5', 'escape' => false)
+	                        ); ?>
+                        </li>
                         <?php else: ?>   
-                        <li><?php echo $this->Html->link("Se connecter",array('controller'=>'users','action'=>'login')); ?></li>   
-                        <li><?php echo $this->Html->link("S'inscrire",array('controller'=>'users','action'=>'signup')); ?></li>
+                        <li>
+                        	<?php echo $this->Html->link(
+	                        	$this->Html->tag('span', 'Connexion', array('data-hover' => 'Connexion')),
+	                        	array('controller'=>'users','action'=>'login'), 
+	                        	array('class' => 'cl-effect-5', 'escape' => false)
+                        	); ?>
+                        </li>   
+                        <li>
+                        	<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Inscription', array('data-hover' => 'Inscription')),
+	                        	array('controller'=>'users','action'=>'signup'),
+	                        	array('class' => 'cl-effect-5', 'escape' => false)
+                        	); ?>
+                        </li>
                         <?php endif; ?>
-						<li><?php echo $this->Html->link('A propos','/about'); ?></li>
+						<li>
+							<?php echo $this->Html->link(
+								$this->Html->tag('span', 'Notre équipe', array('data-hover' => 'Notre équipe')),
+								'/about',
+								array('class' => 'cl-effect-5', 'escape' => false)
+							); ?>
+						</li>
 					</ul>  	
+				</div>
+				<!--Logo-->
+				<div class="jumbotron">
+					<?php echo $this->Html->image('logo.png', array('alt' => 'Logo')); ?>
 				</div>
 			</div>
 		</div>
@@ -97,7 +154,9 @@ $websiteName = 'Défistop';
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-		
+			<div class="container">
+		        <p class="pull-right"> &#169; Polytrip | Défi Stop • 2013-2014</p>
+		    </div>
 		</div>
 	</div>
 	<?php 

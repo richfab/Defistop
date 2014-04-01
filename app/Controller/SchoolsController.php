@@ -4,7 +4,7 @@ class SchoolsController extends AppController {
     public function super_add() {
     
     	//on inclut le script google maps pour l'autocomplete des lieux
-    	$this->set('jsIncludes',array('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places','address_autocomplete'));
+    	$this->set('jsIncludes',array('http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places','address_autocomplete'));
     
         if ($this->request->is('post')) {
         	if (!($this->data['User']['password'] === $this->data['User']['password_confirm'])) {

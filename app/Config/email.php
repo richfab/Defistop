@@ -39,15 +39,15 @@ class EmailConfig {
 
 	public $default = array(
 		'transport' => 'Mail',
-		'from' => 'contact@fabienrichard.fr',
+		'from' => 'gavy.polytrip@gmail.com',
 		'charset' => 'utf-8',
 		'headerCharset' => 'utf-8',
 	);
 	
 	public $to_admin = array(
 		'transport' => 'Mail',
-		'from' => 'contact@fabienrichard.fr',
-		'to' => 'contact@fabienrichard.fr',
+		'from' => 'gavy.polytrip@gmail.com',
+		'to' => 'gavy.polytrip@gmail.com',
 		'charset' => 'utf-8',
 		'headerCharset' => 'utf-8',
 	);

@@ -10,15 +10,17 @@ class YearsController extends AppController {
 	);
 	
 	public function admin_index(){
+		//user id = 1 reservé au developpeur du site
 		$this->set('years', $this->Paginate('Year'));
-        $this->set('users', $this->Paginate('User',array('role' => array('admin','super'))));
+        $this->set('users', $this->Paginate('User',array('role' => array('admin','super'),'User.id !=' => 1)));
 	}
 
     public function super_index() {
     	//on ajoute l'année courante dans la table des années. l'année est clé primaire, elle est unique (et donc ajoutée que si elle n'existe pas encore)
     	$this->super_add();
+    	//user id = 1 reservé au developpeur du site
         $this->set('years', $this->Paginate('Year'));
-        $this->set('users', $this->Paginate('User',array('role' => array('admin','super'),'User.id !=' => 0)));
+        $this->set('users', $this->Paginate('User',array('role' => array('admin','super'),'User.id !=' => 1)));
     }
     
     public function super_add() {

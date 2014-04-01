@@ -43,20 +43,20 @@ function setMapSize(){
 		var hauteur_a_rajouter_a_la_liste = 51;
 	}
 	else{
-		var largeur_a_enlever_a_la_carte = 300;
+		var largeur_a_enlever_a_la_carte = 290;
 		var hauteur_a_rajouter_a_la_liste = 1;
 	}
 	//si le navigateur est internet explorer
 	if (navigator.appName == "Microsoft Internet Explorer"){
 		mapdiv.style.width = document.body.offsetWidth - 20 - largeur_a_enlever_a_la_carte;
-		mapdiv.style.height = document.body.offsetHeight - $('#offset').height() - 20;
+		mapdiv.style.height = document.body.offsetHeight - $('#offset').height() - 20 - $("#footer").height();
 		//meme chose pour la liste
-		userlistdiv.style.height = document.body.offsetHeight - $('#offset').height() - 20;
+		userlistdiv.style.height = document.body.offsetHeight - $('#offset').height() - 20 - $("#footer").height();
 	} else {
 		mapdiv.style.width = window.innerWidth - largeur_a_enlever_a_la_carte + 'px';
-		mapdiv.style.height = window.innerHeight - $('#offset').height() -1  + 'px';
+		mapdiv.style.height = window.innerHeight - $('#offset').height() -1 - $("#footer").height()  + 'px';
 		//meme chose pour la liste
-		userlistdiv.style.height = window.innerHeight - $('#offset').height() + hauteur_a_rajouter_a_la_liste  + 'px';	
+		userlistdiv.style.height = window.innerHeight - $('#offset').height() - $("#footer").height() + hauteur_a_rajouter_a_la_liste  + 'px';	
 	}
 }
 
@@ -69,8 +69,10 @@ function maj_zoom(lat_zoom,lon_zoom){
 window.onload=function(){
 
 	//parce qu'on ne veut pas le style par defaut de cakephp pour cette page on enleve les padding:
-	document.getElementById('content').style.padding = 0;
+	/*
+document.getElementById('content').style.padding = 0;
 	document.getElementById('footer').style.padding = 0;
+*/
 	
 	//on lance la fonction d'initialisation
     initialize();

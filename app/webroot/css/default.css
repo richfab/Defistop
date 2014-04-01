@@ -1,0 +1,445 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700);
+
+.navbar-default {
+  background-color: #fff;
+}
+
+#presentation {
+  background-attachment: fixed;
+  background: #323234 url(../img/background3.jpg) no-repeat;
+  background-position: center 50px;
+  background-attachment: fixed;
+  height: 300px;
+  width: 100%;
+  margin-top: 50px;
+  border-bottom: 1px solid #C9C9C9;
+}
+
+a.btn-green {
+  color: #fff!important;
+  background-color: #3498db;
+  border-color: #fff;
+}
+
+
+a.btn-green:hover {
+  color: #3498db!important;
+  background-color: #fff;
+  border-color: #3498db;
+}
+
+a.btn-orange {
+  color: #fff!important;
+  background-color: #e74c3c;
+  border-color: #fff;
+}
+
+a.btn-orange:hover {
+  color: #e74c3c!important;
+  background-color: #fff;
+  border-color: #e74c3c;
+}
+
+a.btn-test:hover {
+  color: #e74c3c!important;
+  background-color: #fff;
+  border-color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+a.btn-test {
+  color: #fff!important;
+  background-color: #e74c3c;
+  border-color: #fff;
+  letter-spacing: 0.09em;
+  border: 1px solid #e74c3c;
+}
+
+.marketing {
+  padding-top: 20px;
+  font-family: 'Open Sans', sans-serif
+}
+
+.col-lg-3 {
+  text-align: center;
+}
+.col-lg-3 h2{
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.07em
+}
+.col-lg-3 > p{
+  text-align: justify;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+
+h2.mini-marketing {
+  font-size: 18px;
+  font-variant: small-caps;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  color: #666;
+}
+
+h2 > span.wut {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#footer {
+	background-color: #202328;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+}
+
+#footer p {
+  color: #56585f;
+  margin: 1px 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+#footer a {
+  color: #56585f;
+}
+
+.block-color {
+  background-color: #ecf0f1;
+  color: #fff;
+  padding: 30px;
+}
+
+.block-color h2 {
+  color: #56585f;
+  text-align: justify;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 22px;
+  line-height: 30px;
+  font-style: italic;
+}
+
+#control-map {
+  position: absolute;
+  width: 450px;
+  height: 40px;
+  background-color: #fff;
+  z-index: 10;
+  top: 80px;
+  left: 50px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
+  border-radius: 2px;
+}
+
+#list-map {
+  position: absolute;
+  width: 450px;
+  height: 194px;
+  background-color: #fff;
+  z-index: 10;
+  top: 125px;
+  left: 50px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0);
+  border-radius: px;
+}
+
+#list-map a {
+  height: 64px;
+  display: block;
+  
+}
+
+#list-map li {
+  height: 64px;
+  border-bottom: 1px solid #e7e7e7;
+
+}
+
+#list-map li.last-child {
+  border-bottom: none;
+}
+
+.access {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.access a{
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 3px 20px 5px 20px;
+}
+
+.row-marketing{
+  padding: 40px 30px;
+}
+.navbar-brand {
+  padding: 12px 10px;
+}
+
+#profil {
+  margin-top: 50px;
+  padding: 20px 0;
+}
+
+#block-temps {
+  padding-top: 25px;
+  color: #888;
+  letter-spacing: 0.05em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+
+}
+
+.jours {
+  color: #999;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  font-style: italic;
+
+}
+
+.nombre{
+  color: #3498db;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 0.07em;
+  font-style: normal;
+}
+
+body {
+    font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+    opacity:0.999;
+    font-size: 100%;
+    font-weight: 300;
+    color: #666666;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #328ff1;
+    text-decoration: none;
+}
+
+ul, li, dd {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.standalone-content-wrapper hr {
+    border-width: 0;
+    border-top: 1px solid #eee;
+    margin: 1em 0 1em;
+}
+
+input, textarea, input.text-input {
+    height: 34px;
+    padding: 0 10px;
+    padding-top: 4px;
+    font-size: 16px;
+}
+
+input, textarea {
+    font-family: Proxima-Nova,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+input, select, textarea {
+    font-family: Proxima-Nova,Helvetica,Arial,sans-serif !important;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+    cursor: text;
+    outline-width: 0;
+    font-family: Proxima-Nova;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+input:focus.placeholder, textarea:focus.placeholder {
+    color: #eee;
+}
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+    color: #eee;
+}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+    color: #eee;
+}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+    color: #eee;
+}
+
+.text-input:focus, .text-input.focus, .textarea-input:focus, .textarea-input.focus {
+    border-color: #98c7f8 !important;
+}
+
+.text-input, .textarea-input {
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0 10px;
+    height: 30px;
+    padding-top: 2px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+form.login-form .input-fields input:not(.login-password-field), form.signup-form .input-fields input:not(.login-password-field) {
+    width: 49%;
+}
+
+form.signup-form .input-fields input{
+    width: 100% !important;
+    margin: 5px 0;
+}
+
+form.login-form .input-fields .password-input-wrapper, form.signup-form .input-fields .password-input-wrapper {
+    position: relative;
+    display: inline-block;
+    top: 12px;
+    width: 49%;
+    height: 34px;
+    margin-left: 1%;
+    padding-left: 0;
+}
+    
+form.login-form .input-fields .login-password-field, form.signup-form .input-fields .login-password-field {
+    position: absolute;
+    margin-top: -1px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-right: 80px;
+}
+
+form.login-form .input-fields .forgot-password-link, form.signup-form .input-fields .forgot-password-link {
+    position: absolute;
+    right: 10px;
+    margin-top: -1px;
+    top: 5px;
+    display: inline-block;
+    height: 24px;
+    padding-left: 10px;
+    border-left: 1px solid #eee;
+    line-height: 27px;
+    font-size: 14px;
+    outline: none;
+}
+
+form.login-form .input-fields .forgot-password-link:hover, form.signup-form .input-fields .forgot-password-link:hover {
+    text-decoration: none;
+}
+form.login-form .input-fields .forgot-password-link:active, form.signup-form .input-fields .forgot-password-link:active {
+    opacity: 0.5;
+}
+
+
+
+body {
+    font-size: 100%;
+    color: #444;
+    line-height: 1.5;
+    font-weight: 300;
+}
+.important-text {
+    font-size: 18px;
+}
+
+.jumbotron {
+	background-color: #fff;	
+	padding: 0;
+	margin: 0;
+}
+
+.standalone-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.standalone-content-wrapper .inner-content-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.standalone-content-wrapper .standalone-content {
+    max-width: 900px;
+    min-width: 280px;
+    margin: 0 auto;
+}
+
+.public-page-form-footer {
+    color: #aaa;
+}
+
+.public-page-form-footer .form-submit {
+    float: right;
+    position: relative;
+    height: 42px;
+}
+
+.public-page-form-footer .alt {
+    float: left;
+}
+
+form.login-form .input-fields, form.signup-form .input-fields {
+    padding: 5px 0 15px;
+}
+
+.forgot-password-email-field {
+    width: 100% !important;
+    margin: 15px 0;
+}
+
+#mapBg {
+	background: transparent url(../img/home/nantesBgS.jpg) no-repeat center;
+	height: 300px;
+/* 	pour que la carte soit en full width mais que le div content garde son padding */
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+#mapBg h2 {
+	text-align: center;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 50px;
+	font-weight: 400;
+	padding-top: 25px;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px #fff, 0 1px 1px #000;
+	font-family: 'Annie Use Your Telescope', cursive;
+	display: none;
+}
+
+#content {
+/* 	padding: 10px 0px 40px 0px; */
+}
+
+ /* Mobile Landscape and Portrait */
+  @media only screen and (max-width: 479px) {
+  	form.login-form .input-fields input:not(.login-password-field), form.signup-form .input-fields input:not(.login-password-field) {
+    	width: 100%;
+    }
+	form.login-form .input-fields .password-input-wrapper, form.signup-form .input-fields .password-input-wrapper {
+		width: 100%;
+	}
+  }

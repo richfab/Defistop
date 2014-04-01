@@ -177,7 +177,7 @@ function get_teams_sorted(user_id){
 		
 			var newLi = document.createElement('li');
 			ul_ranking.appendChild(newLi);
-			newLi.innerHTML = "<a onclick='display_team_route_from_list("+i+");'><div id='ptr_div'><div class='sprite last"+users[i].team_number+"'></div></div><div id='info_div'><span class='team'>"+rank+". "+users[i].team_name+" "+users[i].distance+" Km</span><br/>Polytech "+users[i].school_name+"</br><span class='times'>"+il_y_a+"</span></div></a></a>";
+			newLi.innerHTML = "<a onclick='display_team_route_from_list("+i+");'><div id='ptr_div'><div class='sprite last"+users[i].team_number+"'></div></div><div id='info_div'><span class='team'><strong>"+rank+"</strong>. "+users[i].team_name+"</span><br/>Polytech "+users[i].school_name+"</br><span class='times'><span class='kms'>"+users[i].distance+" Km - </span>"+il_y_a+"</span></div></a></a>";
 			
 			//pour le classement de l'équipe connectée
 			if(user_id == users[i].id){

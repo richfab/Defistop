@@ -12,7 +12,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
 	    parent::beforeFilter();
-	    $this->Auth->allow('signup','password','phone_signup'); // Letting users signup themselves and retrieve password
+	    $this->Auth->allow('signup','password','phone_signup','index'); // Letting users signup themselves and retrieve password
 	}
 	
 	public function login() {
@@ -35,8 +35,9 @@ class UsersController extends AppController {
         
         if ($this->request->is('post')) {
         
-        	//on teste si le formulaire d'ecole absente de la liste a été rempli
-        	if(!empty($this->data['School']['name'])){
+        	//on teste si le formulaire d'ecole absente de la liste a été rempli ////option désactivée////
+        	/*
+	        	if(!empty($this->data['School']['name'])){
         	
         		//on envoie un email a l'admin pour le prévenir de la demande de participation
         		App::uses('CakeEmail','Network/Email');
@@ -49,7 +50,7 @@ class UsersController extends AppController {
 					->send();  
 	        	$this->Session->setFlash("L'organisateur a été informé de votre demande", 'default', array('class' => 'alert-box radius alert-success'));           
 			    return;
-        	}
+        	}*/
         
         	if (!($this->data['User']['password'] === $this->data['User']['password_confirm'])) {
 			    $this->Session->setFlash("Les mots de passe ne correspondent pas", 'default', array('class' => 'alert-box radius warning'));               
@@ -136,11 +137,30 @@ class UsersController extends AppController {
 	
 	//methode qui retourne vrai si l'utilisateur connecté a payé, false sinon
 	public function userHasPayed($user_id = null){
-		App::uses('AuthComponent', 'Controller/Component');
 		
 		if($user_id != null){
 			$user = $this->User->find('first', array('conditions' => array('User.id' => $user_id), 'fields' => array('User.payed')));
 			return $user['User']['payed'];
+		}
+		else{
+			return false;
+		}
+	}
+	
+	//methode qui retourne vrai si l'utilisateur est de l'année en cours
+	public function userBelongsToCurrentYear($user_id = null){
+		
+		$year = $this->User->Year->find('first',array('order' => array('Year.id' => 'DESC'),'fields' => 'Year.id'));
+		$year_id = $year['Year']['id'];
+		
+		if($user_id != null){
+			$user = $this->User->find('first', array('conditions' => array('User.id' => $user_id), 'fields' => array('User.year_id')));
+			if($user['User']['year_id'] == $year_id){
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 		else{
 			return false;
@@ -164,7 +184,13 @@ class UsersController extends AppController {
 			$user = $this->User->find('first', array('conditions' => array('User.year_id' => $year_id), 
 													'fields' => array('User.team_number'),
 													'order' => array('User.team_number' => 'DESC')));
-			return $user['User']['team_number']+1;
+			if($user){
+				return $user['User']['team_number']+1;
+			}
+			else{
+				//premiere inscription de l'année
+				return 1;
+			}
 		}
 		else{
 			return 0;
@@ -268,6 +294,29 @@ class UsersController extends AppController {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
         }
+    }
+    
+    public function index() {
+    
+    	/* Set pagination options */
+		$this->paginate = array(
+			'User' => array(
+				'order' => array(
+					'year_id' => 'DESC',
+					'School.name' => 'ASC'
+				),
+				'conditions' => array('role' => 'user'),
+				'limit' => 1000,
+				'recursive' => 0
+			)
+		);
+		
+		//recupere les années
+		$years = $this->User->Year->find('all',array('order' => array('Year.id' => 'DESC'), 'recursive' => 0));
+        $this->set('years',$years);
+        
+        //on ne recupere que les equipes, pas l'admin
+        $this->set('users', $this->Paginate('User'));
     }
     
     public function super_index($year_id = null) {

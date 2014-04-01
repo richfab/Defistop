@@ -2,11 +2,18 @@ html { height: 100% }
   body {
     width: 100%;
     height: 100%; 
-    background-color: #dadada;
+    background-color: white;
     padding: 0;
     margin: 0;
   }
-    #map { height: 100% }
+  
+  #container{
+	  min-height:100%;
+	   position:relative;
+  }
+  
+    #map { height: 100%;
+          	margin-left: -20px; }
   
   .gallery {
 	  background-color: white;
@@ -19,12 +26,12 @@ html { height: 100% }
   }
   form {
 	  margin: 0;
-	  max-width: 500px;
+	  max-width: 900px;
   }
   /* Custom container */
   .container-narrow {
     margin: 0 auto;
-    background-color: #640404;
+    background-color: #FFF;
   }
   .container-narrow > hr {
     margin: 0px 0;
@@ -74,6 +81,7 @@ html { height: 100% }
       background-color:#fff;
       border-bottom: 1px solid #000;
   }
+  
 .pg-open {
     display: none;
     position: relative;
@@ -100,8 +108,16 @@ html { height: 100% }
 }
   #nav { margin: 0; text-align: center;}
   #nav li {display: inline-block; margin: 0px 10px;}
-  #nav li a {color:white; font-variant: small-caps; font-size: 16px; letter-spacing: 3px; font-weight: 400}
-  #nav li a:hover {text-decoration: underline; color:white; background-color: transparent;}
+  
+  #nav li a {
+	  color: #777777;
+	  font-variant: small-caps;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+
+  }
+  #nav li a:hover {color:#EC1C23; background-color: transparent;}
    #school_selector{
    }
    #year_selector{
@@ -115,9 +131,9 @@ html { height: 100% }
    }
    #action_buttons{
 		position: absolute;
-		top: 170px;
+		top: 185px;
 		z-index: 5;
-		right: 330px;
+		right: 290px;
 		float: right;
    }
    
@@ -134,11 +150,15 @@ html { height: 100% }
 	    /* These styles MUST be included. Do not change. */
 	    display: inline-block;
 	    float: right;
-	    z-index: 999999;
-	    overflow: scroll;
+/* 	    z-index: 999999;  genait le modal*/
+	    overflow-y: scroll;
+	    
+/* 	    Pour que le div soit au dessus de la carte */
+	    position: absolute;
+	    right: 0;
 	    
 	    /* Specify the width of your pageslide here */
-	    width: 300px;
+	    width: 290px;
 	    /* These styles are optional, and describe how the pageslide will look */
 	    color: #FFF;
 	    background-image: url('../img/bg.png')
@@ -148,6 +168,9 @@ html { height: 100% }
 		clear: right;
 		line-height: 0;
 		height: 0px;
+	}
+	#signup_link{
+		float: right;
 	}
 	.accueil {
 		
@@ -177,8 +200,12 @@ html { height: 100% }
 	
 	}
 	.times {
-		color: #777777;
+		color: lightgrey;;
 		font-style: italic;
+		font-size: 11px;
+	}
+	.kms{
+		font-style: normal;
 	}
 	
 	.ptr {
@@ -186,10 +213,10 @@ html { height: 100% }
 		margin-left: -50px;
 		padding: 5px;
 	}
-	          #userlist li {display: block; float: none; padding: 0px 0px 0px 0px; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 60px;}
-	          #userlist #self_ranking li {height: inherit; padding: 5px;}
+	          #userlist li {display: block; float: none; padding: 0px 0px 0px 0px; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 65px;}
+	          #userlist #self_ranking li {height: inherit; padding: 5px;font-size: 15px;margin-left: 13px;}
           #userlist li a {padding-top:2px; display:block; color: #fff; border: none; font-variant: normal; letter-spacing: normal ;font-weight:normal;text-shadow: -0px -1px 0px black; font-weight: 400;height: 44px;letter-spacing: 1px; font-size: 18px;margin-left: 10px;}
-          #userlist li a {color: #fff; letter-spacing: 2px; font-size: 14px; font-family: 'Open Sans', Arial, sans-serif;}
+          #userlist li a {color: #fff; letter-spacing: 1.5px; font-size: 12px; font-family: 'Open Sans', Arial, sans-serif;}
           #userlist li a:hover { text-decoration: none; background-color: transparent;}
 			.alert-box {
 				font-size: inherit;
@@ -211,6 +238,10 @@ html { height: 100% }
         #submit button{
 	        margin-right: 5px;
         }
+        
+        .label-important{
+        	background-color:#ff7518
+        }
   
   /* Mobile Landscape and Portrait */
   @media only screen and (max-width: 769px) {
@@ -220,7 +251,7 @@ html { height: 100% }
   	  	top:60px;
   	  	right: 10px;
   	  }
-  	  #userlist{background-color: transparent;}
+  	  #userlist{background-color: transparent;position: relative;}
   	  #topbar1 {background-image: url('../img/bar.png');height: 50px; }
   	  #topbar1 {text-align: center;}
   	  #topbar1 img {display:inline; margin-top: 10px;}
@@ -230,6 +261,9 @@ html { height: 100% }
       #masthead h1 { font-size: 22px; line-height: 30px; background-color: #000; color: #FFF; padding: 10px; }
       #nav { display: none; }
       #userlist { display: none; float:none;}
+      #map{
+      	margin-top: -10px;
+      }
       
       .pg-open { display: block; }
       .back { display: block; }
@@ -241,7 +275,7 @@ html { height: 100% }
           #pageslide #nav li a {color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; font-family: 'Open Sans', Arial, sans-serif;}
           #pageslide #nav li a:hover { text-decoration: none; background-color: transparent;}
           
-          #userlist {padding: 0; width:auto; background-image: none;}
+          #userlist {padding: 0; background-image: none;}
           #userlist li {display: block; float: none; border-bottom: 1px solid #463d35;border-top: 1px solid #63584e; text-align: left; margin: 0px; height: 64px;}
           #userlist li a {padding-top:2px; display:block; color: #fff; border: none; font-variant: normal; letter-spacing: normal ;font-weight:normal;text-shadow: -0px -1px 0px black; font-weight: 400;height: 44px;letter-spacing: 1px; font-size: 18px;margin-left: 10px;}
           #userlist li a {color: #fff; letter-spacing: 2px; font-size: 12px; font-family: 'Open Sans', Arial, sans-serif;}
@@ -256,6 +290,9 @@ html { height: 100% }
     @media only screen and (max-width: 479px) {
         #masthead { width: 280px; }
         #masthead h1 { font-size: 14px; }
+        .photo_team{
+	          	width: 100%;
+          	}
     }
         
         .ch-info h3 {
@@ -274,3 +311,46 @@ color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; fo
 select{
 	width: inherit;
 }
+
+/* Effect 5: same word slide in */
+#nav {
+	padding: 10px 0;
+}
+#nav li a {
+	overflow: hidden;
+	padding: 0 4px;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+#nav  li a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-o-transition: -o-transform 0.3s;
+	-ms-transition: -ms-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+#nav  li a span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#nav  li a:hover span,
+#nav  li a:focus span {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+

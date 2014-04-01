@@ -30,7 +30,7 @@ function func_il_y_a(heure){
 	if(heure==null){
 		return "jamais actualisé";
 	}
-	//on recupere l'heure actuelle et on la met au bon format
+	//on recupere l'heure actuelle et on la met au bon format (probleme si l'ordinateur/telephone n'est pas sur le fuseau francais)
 	var time_now=new Date().getTime();
 	var time_now_format = new Date(time_now);
 	
@@ -57,7 +57,7 @@ function func_il_y_a(heure){
 	}
 	//si il y a moins d'une minute
 	else{
-		il_y_a=il_y_a+"quelques secondes";
+		il_y_a=il_y_a+"quelques sec.";
 	}
 	return il_y_a;
 }
